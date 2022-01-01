@@ -10,6 +10,7 @@
   "license": "MIT",
   "dependencies": {
     "axios": "^0.24.0",
+    "mailparser": "^3.4.0",
     "smtp-server": "^3.9.0"
   }
 }
