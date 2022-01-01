@@ -16,7 +16,7 @@ const server = new SMTPServer({
           {
             title: mail.subject,
             description: mail.text,
-            fields: Array.from(mail.headers).map(([key, value]) => ({
+            fields: mail.headerLines.map(({ key, line: value }) => ({
               name: key,
               value: value,
               inline: true,
