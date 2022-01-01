@@ -7,6 +7,7 @@ const server = new SMTPServer({
   disabledCommands: ["AUTH", "STARTTLS"],
   async onData(stream, session, callback) {
     const mail = await simpleParser(stream);
+    console.log("received mail", JSON.stringify(mail, null, 2));
     try {
       await axios.post(process.env.DISCORD_WEBHOOK, {
         username: "smtp2discord",
